@@ -15,8 +15,8 @@ def image_warp(image):
     M = cv2.getPerspectiveTransform(src, dst)
 
     # compute inverse perspective transform
-    # Minv = cv2.getPerspectiveTransform(dst, src)
+    Minv = cv2.getPerspectiveTransform(dst, src)
 
     # warp the image
     warped = cv2.warpPerspective(image, M, image_size, flags=cv2.INTER_LINEAR)
-    return warped
+    return warped, Minv
