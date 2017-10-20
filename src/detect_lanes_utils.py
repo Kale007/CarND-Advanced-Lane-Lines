@@ -19,8 +19,6 @@ def sliding_window_search(image, is_first_frame, left_fit, right_fit, Minv, undi
     out_img, leftx_base, rightx_base = find_image_histogram_peaks(image)
     window_height = np.int(image.shape[0]/num_windows)
 
-    # If the frame is the first frame of video, perform
-
     # Get nonzero x and y positions
     nonzero = image.nonzero()
     nonzeroy = np.array(nonzero[0])
@@ -79,7 +77,7 @@ def sliding_window_search(image, is_first_frame, left_fit, right_fit, Minv, undi
     projected_image = project_onto_road(image, left_fitx, right_fitx, ploty, Minv, undistorted_image)
 
 
-    ### project area
+
 
 
     # Visualize windows for lane detection
